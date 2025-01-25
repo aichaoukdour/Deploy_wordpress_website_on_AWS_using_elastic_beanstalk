@@ -7,3 +7,6 @@ AWS Elastic Beanstalk is a fully managed service provided by Amazon Web Services
 # how to deploy wordpress website on AWS using elastic beanstalk
 ## Step 1 : Let's lanch the RDS database 
 <img width="949" alt="search1" src="https://github.com/user-attachments/assets/95b1259f-5ff5-431a-9e11-cf2d109da903" />
+
+## Step 2 : Create Database then chose **standard** then MySQL engine
+
