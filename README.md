@@ -107,29 +107,48 @@ click on url provided by elastic beanstalk you will find a page like this
 
 <img width="519" alt="Screenshot 2025-01-26 140844" src="https://github.com/user-attachments/assets/bad67d46-511d-4f10-b42e-4c5a45787170" />
 
-## Download Wordpress 
+**Download Wordpress**
 
-   - **Platform Version**: Choose the latest PHP version.
-4. Upload your WordPress application code as a `.zip` file.
-
-### Step 3: Connect WordPress to RDS
-1. Update the `wp-config.php` file in your WordPress application with the following:
-   ```php
-   define('DB_NAME', 'your-database-name');
-   define('DB_USER', 'your-database-username');
-   define('DB_PASSWORD', 'your-database-password');
-   define('DB_HOST', 'your-rds-endpoint');
-   define('DB_CHARSET', 'utf8mb4');
-   define('DB_COLLATE', '');
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
    ```
-2. Redeploy your WordPress application using Elastic Beanstalk.
+2. Upload your WordPress application code as a `.zip` file.
 
-### Step 4: Test Your Deployment
-1. Access your WordPress site via the **Elastic Beanstalk URL** (e.g., `http://your-app-name.elasticbeanstalk.com`).
-2. Complete the WordPress setup wizard by entering your site details, admin credentials, and database connection information.
-3. Verify that your WordPress site functions correctly, including plugins, themes, and media uploads.
+**Upload and deploy**
+1. go to your elastic beanstalk console choose the environment you created above and select upload and deploy option choose your wordpress file that you just downloaded and click on deploy
 
----
+<img width="484" alt="Screenshot 2025-01-26 141422" src="https://github.com/user-attachments/assets/b49c2fe9-6c03-4409-b1fd-745482b274d7" />
+
+It also takes around 5 min to deploy the application
+
+after it successful deployment click on url but it shows 404 ngnix not found
+
+
+<img width="562" alt="Screenshot 2025-01-26 141533" src="https://github.com/user-attachments/assets/a80efa2a-a4a9-4e76-a2de-bed600819eed" />
+
+***to resolve that***
+1. go to your ec2 dashboard and choose the instance created by elastic beanstalk
+2. copy the public ip and take ssh of that machine from your terminal by running
+   ```bash
+   ssh -i <your key pair name > ec2-user@<public ip>
+   ```
+3. run the following commands
+    ```bash
+    sudo su
+    cd /var/www/html/
+   ```
+    this will let you to go to the location where the actual file is present that you uploaded from console
+    ```bash
+   mv wordpress/* / var/www/html/
+   ```
+    #this command will move the entire files from from wordpress folder
+
+    ```bash
+   rm -rf wordpress
+   ```
+    now again click on url you will find a web page where you wordpress application running
+   
 
 ## Additional Configurations
 
