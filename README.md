@@ -23,15 +23,21 @@ AWS Elastic Beanstalk is a fully managed service that simplifies the deployment 
 2. Navigate to the **RDS** service from the AWS Services menu.
    
 <img width="949" alt="search1" src="https://github.com/user-attachments/assets/75f91dd8-6fb3-47ba-a022-362370c64787" />
+
 3. Click **Create Database**.
-5. Choose the **Standard Create** option and select **MySQL** as the database engine.
-6. Configure the following settings:
+4. Choose the **Standard Create** option and select **MySQL** as the database engine.
+   
+<img width="490" alt="Screenshot 2025-01-26 134244" src="https://github.com/user-attachments/assets/f3c4f8ca-53f0-4902-900e-be0e39d05856" />
+   
+5. Configure the following settings:
    - **DB Instance Identifier**: e.g., `wordpress-db`
    - **Master Username and Password**: Set strong credentials.
    - **Instance Type**: Choose an appropriate size (e.g., `db.t2.micro` for testing).
-7. Ensure **Public Access** is enabled (only for testing; disable for production).
-8. Add a **VPC security group** to control database access.
+6. Ensure **Public Access** is enabled (only for testing; disable for production).
+7. Add a **VPC security group** to control database access.
 9. Click **Create Database** to complete the setup.
+
+<img width="476" alt="Screenshot 2025-01-26 135220" src="https://github.com/user-attachments/assets/6893e4cf-3e96-4abd-8955-bd6476624d32" />
 
 ### Step 2: Set Up Elastic Beanstalk
 1. Navigate to **AWS Elastic Beanstalk** in the AWS Console.
@@ -39,6 +45,10 @@ AWS Elastic Beanstalk is a fully managed service that simplifies the deployment 
 3. Provide the following details:
    - **Application Name**: e.g., `wordpress-app`.
    - **Platform**: Select **PHP**.
+
+<img width="626" alt="Screenshot 2025-01-26 135422" src="https://github.com/user-attachments/assets/aa5b24ae-a3af-4239-bc77-5d8b27ede637" />
+
+
    - **Platform Version**: Choose the latest PHP version.
 4. Upload your WordPress application code as a `.zip` file.
 
