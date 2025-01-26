@@ -48,6 +48,66 @@ AWS Elastic Beanstalk is a fully managed service that simplifies the deployment 
 
 <img width="626" alt="Screenshot 2025-01-26 135422" src="https://github.com/user-attachments/assets/aa5b24ae-a3af-4239-bc77-5d8b27ede637" />
 
+4. In service role click create and use new service role and select aws-elasticbeanstalk-service-role from it
+5. choose your ec2 keypair and your ec2 instance profile to ec2accessdemoapp
+
+   <img width="530" alt="Screenshot 2025-01-26 140153" src="https://github.com/user-attachments/assets/bbba591f-0165-4c79-9f45-44bca9e69157" />
+
+6. In VPC choose default vpc and then select your instance subnet and database subnets
+
+click next
+7. select the default security group from the options and click next
+
+<img width="470" alt="Screenshot 2025-01-26 140321" src="https://github.com/user-attachments/assets/4352a873-9005-4e84-b8c4-be7f25884317" />
+
+8. in health reporting choose basic and untick the manged updates options
+
+<img width="634" alt="Screenshot 2025-01-26 140419" src="https://github.com/user-attachments/assets/aa18d1c6-4cd9-40d3-927b-5885072e8add" />
+
+
+9. Now connect your database by adding environment properties
+
+1. RDS_HOSTNAME
+
+The hostname of the DB instance.
+
+where to find →On the Connectivity & security tab on the Amazon RDS console: Endpoint.
+
+2. RDS_PORT
+
+The port where the DB instance accepts connections. The default value varies among DB engines.
+
+where to find →On the Connectivity & security tab on the Amazon RDS console: Port.
+
+3. RDS_DB_NAME
+
+The database name, ebdb.
+
+where to find →On the Configuration tab on the Amazon RDS console: DB Name.
+
+4.RDS_USERNAME
+
+The username that you configured for your database.
+
+where to find →On the Configuration tab on the Amazon RDS console: Master username.
+
+RDS_PASSWORD
+
+The password that you configured for your database.
+
+Not available for reference in the Amazon RDS console.
+
+<img width="545" alt="Screenshot 2025-01-26 140724" src="https://github.com/user-attachments/assets/d721d6cb-76a1-49a9-aa2c-ab3631706190" />
+
+review your configuration and click on sumbit
+
+It takes around 5 min to create your application
+
+click on url provided by elastic beanstalk you will find a page like this
+
+<img width="519" alt="Screenshot 2025-01-26 140844" src="https://github.com/user-attachments/assets/bad67d46-511d-4f10-b42e-4c5a45787170" />
+
+## Download Wordpress 
 
    - **Platform Version**: Choose the latest PHP version.
 4. Upload your WordPress application code as a `.zip` file.
